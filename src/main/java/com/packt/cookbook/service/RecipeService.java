@@ -7,4 +7,5 @@ import com.packt.cookbook.domain.Recipe;
 public interface RecipeService {
 	List<Recipe> getAllRecipe();
 	Recipe getRecipeById(String recipeId);
+	List<Recipe> getRecipeByCategory(String category);
 }

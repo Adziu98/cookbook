@@ -68,6 +68,16 @@ public class InMemoryRecipeRepository implements RecipeRepository {
 		}
 		return recipeById;
 	}
+	
+	public List<Recipe> getRecipeByCategory(String category) {
+		List<Recipe> recipeByCategory = new ArrayList<Recipe>();
+		for(Recipe recipe: listOfRecipe) {
+			if(category.equalsIgnoreCase(recipe.getCategory())) {
+				recipeByCategory.add(recipe);
+			}
+		}
+		return recipeByCategory;
+	}
 
 
 }

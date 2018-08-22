@@ -29,4 +29,8 @@ public class RecipeServiceImpl implements RecipeService{
 		return null;
 	}
 	
+	public List<Recipe> getRecipeByCategory(String category) {
+		return recipeRepository.getRecipeByCategory(category);
+	}
+	
 }
