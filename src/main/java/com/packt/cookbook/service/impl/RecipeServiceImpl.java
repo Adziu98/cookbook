@@ -1,6 +1,8 @@
 package com.packt.cookbook.service.impl;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,4 +35,12 @@ public class RecipeServiceImpl implements RecipeService{
 		return recipeRepository.getRecipeByCategory(category);
 	}
 	
+	public Set<Recipe> getRecipesByFilter(Map<String, List<String>> filterParams) {
+		return recipeRepository.getRecipesByFilter(filterParams);
+	}
+	
+	public void addRecipe(Recipe recipe) {
+		recipeRepository.addRecipe(recipe);
+	}
+
 }

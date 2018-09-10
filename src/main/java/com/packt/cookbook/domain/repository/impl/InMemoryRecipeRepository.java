@@ -2,7 +2,10 @@ package com.packt.cookbook.domain.repository.impl;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import org.springframework.stereotype.Repository;
 
@@ -77,6 +80,21 @@ public class InMemoryRecipeRepository implements RecipeRepository {
 			}
 		}
 		return recipeByCategory;
+	}
+	
+	public Set<Recipe> getRecipesByFilter(Map<String, List<String>> filterParams) {
+		Set<Recipe> recipesByCategory = new HashSet<Recipe>();
+		Set<String> criterias = filterParams.keySet();
+		if(criterias.contains("category")) {
+			for(String category: filterParams.get("category")) {
+				recipesByCategory.addAll(this.getRecipeByCategory(category));
+			}
+		}
+		return recipesByCategory;
+	}
+	
+	public void addRecipe(Recipe recipe) {
+		listOfRecipe.add(recipe);
 	}
 
 
