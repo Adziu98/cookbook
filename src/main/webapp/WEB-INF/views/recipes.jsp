@@ -26,7 +26,7 @@
 								<p>${recipe.description}</p>
 								<p>Cena: ${recipe.price} zł</p>
 								<p>Czas przygotowania: ${recipe.preparationTime}</p>
-								<p>${recipe.serving}</p>
+								<p>Danie dla: ${recipe.serving} osób</p>
 								<p>
 									<a href=" <spring:url value="/recipes/recipe?id=${category}"/>" class = "btn btn-primary">
 										<span class="glyphicon-info-sign glyphicon"></span> Szczegóły

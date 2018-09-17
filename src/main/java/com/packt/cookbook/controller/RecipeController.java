@@ -59,5 +59,5 @@ public class RecipeController {
 	}
 	@Autowired
 	private RecipeService recipeService;
-
+	
 }
