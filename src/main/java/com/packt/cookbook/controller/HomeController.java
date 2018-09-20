@@ -14,4 +14,8 @@ public class HomeController {
 		
 		return "welcome";
 	}
+	@RequestMapping("/welcome/greeting")
+	public String greetin() {
+		return "welcome";
+	}
 }

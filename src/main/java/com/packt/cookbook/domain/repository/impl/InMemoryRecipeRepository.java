@@ -29,7 +29,7 @@ public class InMemoryRecipeRepository implements RecipeRepository {
 		scrambledEggs.setServing("jajecznica z 2 jajek = 1 osoba, prosta matematyka");
 		scrambledEggs.setPreparationTime("5-10 minut");
 		
-		Recipe scrambledEggsA =  new Recipe("1", "jajecznica", new BigDecimal(10));
+		Recipe scrambledEggsA =  new Recipe("2", "jajecznica", new BigDecimal(10));
 		scrambledEggsA.setDescription("Jest domeną prostej kuchni, ponieważ nie wymaga umiejętności kulinarnych ani techniki."
 				+ "Jajecznica ma długą historię, przewija się w dziejach, występuje w polskiej tradycji,"
 				+ " wielokrotnie przytaczano ją w literaturze, a obecnie jest również elementem życia "
@@ -39,7 +39,7 @@ public class InMemoryRecipeRepository implements RecipeRepository {
 		scrambledEggsA.setServing("jajecznica z 2 jajek = 1 osoba, prosta matematyka");
 		scrambledEggsA.setPreparationTime("5-10 minut");
 		
-		Recipe scrambledEggsB =  new Recipe("1", "jajecznica", new BigDecimal(10));
+		Recipe scrambledEggsB =  new Recipe("3", "jajecznica", new BigDecimal(10));
 		scrambledEggsB.setDescription("Jest domeną prostej kuchni, ponieważ nie wymaga umiejętności kulinarnych ani techniki."
 				+ "Jajecznica ma długą historię, przewija się w dziejach, występuje w polskiej tradycji,"
 				+ " wielokrotnie przytaczano ją w literaturze, a obecnie jest również elementem życia "
@@ -84,8 +84,8 @@ public class InMemoryRecipeRepository implements RecipeRepository {
 	
 	public Set<Recipe> getRecipesByFilter(Map<String, List<String>> filterParams) {
 		Set<Recipe> recipesByCategory = new HashSet<Recipe>();
-		Set<String> criterias = filterParams.keySet();
-		if(criterias.contains("category")) {
+		Set<String> criteria = filterParams.keySet();
+		if(criteria.contains("category")) {
 			for(String category: filterParams.get("category")) {
 				recipesByCategory.addAll(this.getRecipeByCategory(category));
 			}

@@ -41,10 +41,10 @@ public class RecipeController {
 		model.addAttribute("recipe", recipeService.getRecipesByFilter(filterParams));
 		return "recipes";
 	}
-	@RequestMapping("/recipes")
+	@RequestMapping("/recipe")
 	public String getRecipeById(@RequestParam("id") String recipeId, Model model) {
 		model.addAttribute("recipe", recipeService.getRecipeById(recipeId));
-		return "recipes";
+		return "recipe";
 	}
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public String getAddNewRecipeForm(Model model) {
